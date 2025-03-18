@@ -31,3 +31,7 @@ Before running the application, ensure you have the following installed:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/sakthirangasamy/Employee-management-System-Java-Spring-Boot.git
+
+
+   ![image](https://github.com/user-attachments/assets/af694c2d-ee10-45a3-b737-0628710e0919)
+
