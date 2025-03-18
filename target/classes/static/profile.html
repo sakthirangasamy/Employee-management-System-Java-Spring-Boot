@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Profile</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Navbar Styles */
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #333;
+			padding: 15px 20px;
+		}
+
+		.logo {
+			color: white;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.nav-links {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			gap: 20px;
+		}
+
+		.nav-links a {
+			text-decoration: none;
+			color: white;
+			font-size: 18px;
+			transition: color 0.3s;
+		}
+
+		.nav-links a:hover {
+			color: yellow;
+			/* Hover effect */
+		}
+
+		/* Profile Container Styles */
+		.profile-container {
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			width: 40%;
+			margin: 50px auto;
+			/* Center the container */
+		}
+
+		.profile-container h1 {
+			color: #333;
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+
+		.profile-container p {
+			color: #555;
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		.profile-container a {
+			background-color: #007bff;
+			color: #ffffff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			text-decoration: none;
+			font-size: 16px;
+			transition: background-color 0.3s;
+		}
+
+		.profile-container a:hover {
+			background-color: #0056b3;
+			/* Hover effect */
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div class="logo">EMS</div>
+		<ul class="nav-links">
+			<li><a th:href="@{/profile}">My Profile</a></li>
+			<li><a href="/user/login">Logout</a></li>
+		</ul>
+	</nav>
+
+	<!-- Profile Details -->
+	<div class="profile-container">
+		<h1>My Profile</h1>
+		<p><strong>Employee Id:</strong> <span th:text="${user.id}"></span></p>
+		<p><strong>First Name:</strong> <span th:text="${user.firstname}"></span></p>
+		<p><strong>Last Name:</strong> <span th:text="${user.lastname}"></span></p>
+		<p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+		<p><strong>Phone Number:</strong> <span th:text="${user.phoneNumber}"></span></p>
+		<p><strong>Department:</strong> <span th:text="${user.department}"></span></p>
+		<p><strong>Position:</strong> <span th:text="${user.position}"></span></p>
+		<p><strong>Salary:</strong> <span th:text="${user.salary}"></span></p>
+
+	</div>
+</body>
+
+</html>

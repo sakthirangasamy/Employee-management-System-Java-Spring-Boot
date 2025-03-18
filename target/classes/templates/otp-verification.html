@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Space between logo and links */
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px; /* Space between nav items */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: yellow; /* Hover effect */
+        }
+
+        /* OTP Verification Container Styles */
+        .otp-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            margin: 50px auto; /* Center the container */
+        }
+
+        .otp-container h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .otp-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        .otp-container input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .otp-container button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .otp-container button:hover {
+            background-color: #0056b3; /* Hover effect */
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">EMS</div>
+        <ul class="nav-links">
+            <li><a href="/admin/login">Admin</a></li>
+            <li><a href="/user/login">User</a></li>
+        </ul>
+    </nav>
+
+    <!-- OTP Verification Container -->
+    <div class="otp-container">
+        <h1>OTP Verification</h1>
+        <form id="otpForm" th:action="@{/user/verify-otp}" method="post">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" name="otp" required>
+            <br>
+            <button type="submit">Verify OTP</button>
+        </form>
+        <p class="error-message" th:if="${error}" th:text="${error}"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+	
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+.a{
+	text-align: center;
+	font-size: 50px;
+	font-weight: bolder;
+	margin-top: 200px;
+}</style>
+<body style="background-image: url('ems.avif');background-repeat: no-repeat;background-size: 800px;">
+ 
+	<nav class="navbar">
+	       <div class="logo">EMS</div>
+	       <ul class="nav-links">
+	           <li><a href="/admin/login">Admin</a></li>
+	           <li><a href="/user/login">User</a></li>
+	       </ul>
+	   </nav>
+	<div  style="margin-left: 700px;"class="a">  Employee Management System</div>
+</body>
+</html>
